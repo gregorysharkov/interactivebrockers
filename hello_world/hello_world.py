@@ -21,7 +21,7 @@ def main():
     app.connect("127.0.0.1", 7497, 0)
 
     contract = Contract()
-    contract.symbol = "APPL"
+    contract.symbol = "NVDA"
     contract.secType = "STK"
     contract.exchange = "SMART"
     contract.currency = "USD"
