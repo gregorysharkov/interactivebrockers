@@ -1,0 +1,7 @@
+{
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true,
+    "terminal.integrated.env.windows": {
+        "PYTHONPATH": "C:\\TWS API\\source\\pythonclient",
+    }
+}
