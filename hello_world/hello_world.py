@@ -28,7 +28,6 @@ def main():
     contract.primaryExchange = "NASDAQ"
 
     app.reqContractDetails(0, contract)
-    print(contract)
     app.run()
 
 
