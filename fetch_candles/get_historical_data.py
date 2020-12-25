@@ -41,7 +41,7 @@ def main():
         1,
         ContractSamples.EurGbpFx(), 
         "", 
-        "2 D", 
+        "10 D", 
         "1 min", 
         "MIDPOINT", 
         0, 
