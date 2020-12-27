@@ -11,7 +11,7 @@ class TestApp(EWrapper,EClient):
 
     def __init__(self):
         EClient.__init__(self, self)
-        self.filename = "fetch_candles\\data\\EurGbpFx.txt"
+        self.filename = "fetch_candles\\data\\EurUsdFx.txt"
         #clear the contents of the file
         f = open(self.filename, 'r+')
         f.truncate(0)
@@ -37,9 +37,15 @@ def main():
     app = TestApp()
     app.connect("127.0.0.1", 7497, 0)
 
+    contract = Contract()
+    contract.symbol = "EUR"
+    contract.secType = "CASH"
+    contract.currency = "USD"
+    contract.exchange = "IDEALPRO"
+
     app.reqHistoricalData(
         1,
-        ContractSamples.EurGbpFx(), 
+        contract, 
         "", 
         "10 D", 
         "1 min", 

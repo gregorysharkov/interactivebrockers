@@ -66,7 +66,7 @@ def run_test(path, seed, n_run, n_perm, n_trades, investment, give_me_profits=Fa
     """
     df =  read_data_to_df(path)
 
-    random.seed(1983)
+    random.seed(seed)
     profits = []
     for i in range(n_run):
         profits.append(evaluate_permutation(df, n_perm, n_trades, 1000))
@@ -78,17 +78,21 @@ def run_test(path, seed, n_run, n_perm, n_trades, investment, give_me_profits=Fa
     return
 
 def main():
-    path = "C:\\Users\\grego\\interactivebrockers\\data\\EurGbpFx.txt"
-    run_test(
-        path = path,
-        seed = 1983,
-        n_run = 100,
-        n_perm = 100,
-        n_trades = 15,
-        investment = 1000
-    )
+    paths = {"EUR GBP": "C:\\Users\\grego\\interactivebrockers\\data\\EurGbpFx.txt",
+             "EUR USD": "C:\\Users\\grego\interactivebrockers\data\EurUsdFx.txt",
+             "EUR JPY": "C:\\Users\\grego\\interactivebrockers\\data\\EurJpyFx.txt"}
+             
+    for key, value in paths.items():
+        print(key)
+        run_test(
+            path = value,
+            seed = 1983,
+            n_run = 1000,
+            n_perm = 1000,
+            n_trades = 10,
+            investment = 100
+        )
     return
 
 if __name__ == '__main__':
     main()
-    
