@@ -227,15 +227,25 @@ def show_deals_plane(path, long_range, short_range, investment):
 
 def main():
     #read data
-    path = "C:\\Users\\grego\\interactivebrockers\\data\\EurGbpFx.txt"
-    df, deals, eval_ds = show_strategy(path, 80, 14)
+    path = "C:\\Users\\grego\\interactivebrockers\\data\\EurJpyFx.txt"
 #    print(np.sum(eval_ds.profit*1000))
+
+#for EUR GBP pair
 #    show_deals_plane(path,[50,150,5],[5,45,5],1000)
 #    show_deals_plane(path,[80,140,2],[10,20,1],1000)
 #    show_deals_plane(path,[80,90,1],[11,14,1],1000)
 #    show_deals_plane(path,[80,84,1],[13,14,1],1000)
+#    df, deals, eval_ds = show_strategy(path, 80, 14)
 
+#for EUR USD pair
+#    show_deals_plane(path,[50,150,5],[5,45,5],1000)  
+#    show_deals_plane(path,[120,130,1],[20,30,1],1000)
+#    df, deals, eval_ds = show_strategy(path, 124, 20)
 
+#for EUR JPY pair
+    # show_deals_plane(path,[50,150,5],[5,45,5],1000)
+    # show_deals_plane(path,[140,150,1],[40,50,1],1000)
+    df, deals, eval_ds = show_strategy(path, 148, 49)
 
 
 
