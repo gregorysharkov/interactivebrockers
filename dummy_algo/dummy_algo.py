@@ -30,7 +30,7 @@ def get_prices(pair, data):
     close_time = data.loc[pair[1],"date"]
     buy_price = data.loc[pair[0],"open"]
     sell_price = data.loc[pair[1],"close"]
-    profit = buy_price - sell_price
+    profit = sell_price - buy_price
     return [open_time, close_time, buy_price, sell_price, profit]
 
 
@@ -42,7 +42,7 @@ def evaluate_permutation(data, n_perm, n_trades, investment=1000, max_idle=5, ma
     :n_trades: number of trades to be generated for each permutaion
     :return: a single number containing cumulative profit or loss
     """
-    start = random.randint(1, data.shape[0]-200)
+    start = random.randint(1, 10)
     idle_time = [random.randrange(1,max_idle) for x in range(0,n_trades)]
     open_time = [random.randrange(1,max_open) for p in range(0,n_trades)]
 
@@ -69,7 +69,7 @@ def run_test(path, seed, n_run, n_perm, n_trades, investment, give_me_profits=Fa
     random.seed(seed)
     profits = []
     for i in range(n_run):
-        profits.append(evaluate_permutation(df, n_perm, n_trades, 1000))
+        profits.append(evaluate_permutation(df, n_perm, n_trades, investment))
 
     print(f"Mean: {s.mean(profits)},\tSD: {s.stdev(profits)},\t sum: {sum(profits)}")
     if give_me_profits:
@@ -89,8 +89,8 @@ def main():
             seed = 1983,
             n_run = 1000,
             n_perm = 1000,
-            n_trades = 10,
-            investment = 100
+            n_trades = 200,
+            investment = 1000
         )
     return
 
