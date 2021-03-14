@@ -130,3 +130,5 @@ dmypy.json
 
 /fetch_candles/data/
 data
+
+*.code-workspace
